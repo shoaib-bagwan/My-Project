@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useApi } from "./ApiContext";
 
 function UpdateOldCar() {
-    const apiUrl = "http://localhost:8000";
+    // const apiUrl = "http://localhost:8000";
+    const {apiUrl}=useApi();
     const [data, setData] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedCar, setSelectedCar] = useState(null);

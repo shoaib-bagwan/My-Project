@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useApi } from "./ApiContext";
 
 function Register({ isDark }) {
-  const apiUrl = "http://localhost:8000";
+  // const apiUrl = "http://localhost:8000";
+  const {apiUrl}=useApi();
   const [result, setResult] = useState([]);
   const [data, setData] = useState({
     username: "",

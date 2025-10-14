@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useApi } from "./ApiContext";
 
 function DeleteCar() {
-    const apiUrl = "http://localhost:8000";
+    const {apiUrl} = useApi();
     const [data, setData] = useState([]);
 
     const fetchPost = () => {

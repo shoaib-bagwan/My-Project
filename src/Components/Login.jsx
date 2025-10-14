@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useApi } from "./ApiContext";
 
 function Login({ isDark }) {
-  const apiUrl = "http://localhost:8000";
+  // const apiUrl = "http://localhost:8000";
+  const {apiUrl}=useApi();
   const [data, setData] = useState({
     email: "",
     password: "",

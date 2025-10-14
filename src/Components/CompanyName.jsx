@@ -6,12 +6,13 @@ import { useApi } from "./ApiContext";
 function CompanyName() {
   const { carCompany } = useParams(); // company name from URL
   const [cars, setCars] = useState([]);
-  const { addToCart } = useApi();
-  const navigate = useNavigate()
+  const { addToCart,apiUrl } = useApi();
+  const navigate = useNavigate();
+  
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/cars/all-cars`);
+      const res = await axios.get(`${apiUrl}/api/cars/all-cars`);
       const companyCars = res.data.filter(
         (c) => c.carCompany?.toLowerCase() === carCompany.toLowerCase()
       );

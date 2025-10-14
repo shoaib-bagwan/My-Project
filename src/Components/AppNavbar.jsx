@@ -6,7 +6,7 @@ import { useApi } from "./ApiContext";
 
 function AppNavbar() {
   const navigate = useNavigate();
-  const { count } = useApi();
+  const { count,apiUrl } = useApi();
   const [txt, setTxt] = useState("");
   const [car, setCar] = useState([]);
   const [selectedCar, setSelectedCar] = useState(null);
@@ -38,7 +38,7 @@ function AppNavbar() {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/cars/all-cars`);
+      const res = await axios.get(`${apiUrl}/api/cars/all-cars`);
 
       setCar(res.data);
     } catch (e) {

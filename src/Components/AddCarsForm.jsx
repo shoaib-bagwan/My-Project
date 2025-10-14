@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { useState } from "react";
+import { useApi } from './ApiContext';
 
 function AddCarsForm() {
-  const apiUrl = 'http://localhost:8000';
+  // const apiUrl = 'http://localhost:8000';
+  const {apiUrl}=useApi();
   const [data, setData] = useState({
     carName: '',
     carModel: '',
