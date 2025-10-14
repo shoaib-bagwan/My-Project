@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 const ApiContext = createContext();
 export const ApiProvider = ({ children }) => {
-  const apiUrl = "https://my-project-three-pi-31.vercel.app";
+  const apiUrl = "https://server-a40p.onrender.com";
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState();
   const [quant, setQuant] = useState(1);
