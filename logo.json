@@ -1,0 +1,82 @@
+[
+  {
+    "imageSrc": "/Images/Audilogo.svg",
+    "logoName": "Audi Logo",
+    "company": "Audi"
+  },
+  {
+    "imageSrc": "/Images/BMWlogo.svg",
+    "logoName": "BMW Logo",
+    "company": "BMW"
+  },
+  {
+    "imageSrc": "/Images/Hondalogo.svg",
+    "logoName": "Honda Logo",
+    "company": "Honda"
+  },
+  {
+    "imageSrc": "/Images/Hyundailogo.svg",
+    "logoName": "Hyundai Logo",
+    "company": "Hyundai"
+  },
+  {
+    "imageSrc": "/Images/Kialogo.svg",
+    "logoName": "Kia Logo",
+    "company": "Kia"
+  },
+  {
+    "imageSrc": "/Images/Mahindralogo.svg",
+    "logoName": "Mahindra Logo",
+    "company": "Mahindra"
+  },
+  {
+    "imageSrc": "/Images/Maruti_Suzukilogo.svg",
+    "logoName": "Maruti Suzuki Logo",
+    "company": "Maruti Suzuki"
+  },
+  {
+    "imageSrc": "/Images/Mercedes-Benzlogo.svg",
+    "logoName": "Mercedes-Benz Logo",
+    "company": "Mercedes-Benz"
+  },
+  {
+    "imageSrc": "/Images/MGlogo.svg",
+    "logoName": "MG Logo",
+    "company": "MG"
+  },
+  {
+    "imageSrc": "/Images/MINIlogo.svg",
+    "logoName": "MINI Logo",
+    "company": "MINI"
+  },
+  {
+    "imageSrc": "/Images/Nissanlogo.svg",
+    "logoName": "Nissan Logo",
+    "company": "Nissan"
+  },
+  {
+    "imageSrc": "/Images/Renaultlogo.svg",
+    "logoName": "Renault Logo",
+    "company": "Renault"
+  },
+  {
+    "imageSrc": "/Images/Skodalogo.svg",
+    "logoName": "Skoda Logo",
+    "company": "Skoda"
+  },
+  {
+    "imageSrc": "/Images/Tatalogo.svg",
+    "logoName": "Tata Logo",
+    "company": "Tata"
+  },
+  {
+    "imageSrc": "/Images/Toyotalogo.svg",
+    "logoName": "Toyota Logo",
+    "company": "Toyota"
+  },
+  {
+    "imageSrc": "/Images/Volkswagenlogo.svg",
+    "logoName": "Volkswagen Logo",
+    "company": "Volkswagen"
+  }
+]
