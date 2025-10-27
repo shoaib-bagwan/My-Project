@@ -9,11 +9,13 @@ function Home() {
   const go = (id) => navigate(`/new-id/${id}`);
   const { apiUrl, addToCart } = useApi();
   const [result, setResult] = useState([]);
+  const [loading,setLoading]=useState(true)
 
   const getCarData = async () => {
     try {
       const cars = await axios.get(`${apiUrl}/api/cars/all-cars`);
       setResult(cars.data);
+      setLoading(false);
     } catch (e) {
       console.log(e);
       alert("Network Error");
@@ -22,11 +24,19 @@ function Home() {
 
   useEffect(() => { getCarData(); }, []);
 
+  
   return (
     <div className="container my-5 text-light">
       <h2 className="mb-4 fst-italic text-center carousel-container">
         Buy Cars from <span className='text-warning fw-bold'>Auto Dealer</span> and get Car Accessories for Free
       </h2>
+      {loading && (
+      <div class="d-flex justify-content-center m-5">
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      )}
 
       <div className="row g-4">
         {result.map((car, index) => (
@@ -37,7 +47,7 @@ function Home() {
                 src={car.carImage?.[0]?.main}
                 alt={car.carName}
                 className="card-img-top rounded-top-4 animate-zoom"
-                style={{ objectFit: "cover", height: "250px" }}
+                style={{ objectFit: "contain", height: "250px" }}
               />
 
               {/* Car Details */}
@@ -55,14 +65,14 @@ function Home() {
 
               {/* Buttons */}
               <div className="card-footer bg-dark border-0 d-flex gap-2">
-                <button 
+                <button
                   className="btn btn-primary flex-fill hover-lift"
                   onClick={() => go(car._id)}
                 >
                   View Details
                 </button>
-                <button 
-                  className="btn btn-warning flex-fill hover-lift" 
+                <button
+                  className="btn btn-warning flex-fill hover-lift"
                   onClick={() => addToCart({ ...car, price: Number(car.price), quantity: 1 })}
                 >
                   Book Car
