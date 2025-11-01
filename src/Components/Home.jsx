@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useApi } from './ApiContext';
+
 function Home() {
   const navigate = useNavigate();
   const go = (id) => navigate(`/new-id/${id}`);
@@ -11,7 +12,6 @@ function Home() {
   const [allCars, setAllCars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [suggestions, setSuggestions] = useState([]);
-
 
   const getCarData = async () => {
     try {
@@ -25,10 +25,8 @@ function Home() {
     }
   };
 
-
   const handler = (e) => {
     const value = e.target.value.toLowerCase();
-
     if (value === "") {
       setSuggestions([]);
     } else {
@@ -40,17 +38,15 @@ function Home() {
       setSuggestions(related.slice(0, 5));
     }
   };
-  
 
   useEffect(() => {
     getCarData();
-    
   }, []);
 
   return (
-    <div className="container my-5 text-light">
-      <div className="container my-5">
-        <div className="row g-5">
+    <div className="container-fluid my-5 text-light">
+      <div className="container mb-5">
+        <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-sm-10">
             <form
               className="d-flex flex-column justify-content-center align-items-center border border-warning bg-dark text-light p-4 rounded-4 shadow-lg position-relative"
@@ -81,7 +77,6 @@ function Home() {
                 }}
               />
 
-              {/* ℹ️ Info Text */}
               <p className="text-danger fw-semibold mb-2">
                 Contact or subscribe to get updates about new cars!
               </p>
@@ -124,39 +119,37 @@ function Home() {
               )}
             </form>
           </div>
-          {/* <div >
-          <div className="col-lg-6 col-md-8 col-sm-10 border">
-            <img src={ads} alt="" className='img-fluid' style={{objectFit:"cover"}} />
-          </div>
-          </div> */}
         </div>
       </div>
 
-      <h2 className="mb-4 fst-italic text-center carousel-container">
+      <h2 className="mb-4 fst-italic text-center">
         Buy Cars from <span className="text-warning fw-bold">Auto Dealer</span> and get Car Accessories for Free
       </h2>
 
-
-
+      {/* Loader */}
       {loading && (
-        <div className="d-flex justify-content-center m-5">
+        <div className="d-flex justify-content-center my-5">
           <div className="spinner-border text-light" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
       )}
 
-
-      <div className="row g-4">
+      {/* Car Grid */}
+      <div className="row g-4 px-4">
         {result.length > 0 ? (
           result.map((car, index) => (
-            <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-              <div className="card car-card shadow-dark hover-lift h-100 rounded-4 bg-dark text-light">
+            <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
+              <div className="card shadow-lg h-100 rounded-4 bg-dark text-light border-0 hover-lift">
                 <img
                   src={car.carImage?.[0]?.main}
                   alt={car.carName}
-                  className="card-img-top rounded-top-4 animate-zoom"
-                  style={{ objectFit: "contain", height: "250px" }}
+                  className="card-img-top rounded-top-4"
+                  style={{
+                    objectFit: "contain",
+                    height: "220px",
+                    padding: "10px",
+                  }}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold text-warning">{car.carName}</h5>
@@ -165,7 +158,7 @@ function Home() {
                     ₹ {Number(car.price).toLocaleString("en-IN")}
                   </h6>
 
-                  <div className="mt-2">
+                  <div className="mt-2 small">
                     <p className="mb-1"><strong>Fuel:</strong> {car.fuel}</p>
                     <p className="mb-1"><strong>Transmission:</strong> {car.transmission}</p>
                     <p className="mb-1"><strong>Year:</strong> {car.carModel}</p>

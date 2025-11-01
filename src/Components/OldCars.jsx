@@ -41,7 +41,7 @@ function OldCars() {
 
   return (
 
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
       <div className="d-flex justify-content-center gap-5">
         <input type="text" name="" id="search" onChange={(e) => setSearchInp(e.target.value)} className='rounded-4 p-2 border border-secondary border-3' placeholder='Search Old Cars By Name and Company' style={{ minWidth: "30vw" }} />
         <div className="btn btn-success" onClick={() => searchHandler()}>Search</div>
