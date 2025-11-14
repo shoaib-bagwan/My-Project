@@ -21,7 +21,7 @@ function UserHistory() {
     const cancelOrder = async (id) => {
         try {
 
-            const res = await axios.put(`${apiUrl}/api/orders/update-order/${id}`,{status:"Cancelled by User"});
+            const res = await axios.put(`${apiUrl}/api/orders/update-order/${id}`, { status: "Cancelled by User" });
             if (res.status == 200) {
                 fetchData();
                 console.log(res.data)
@@ -63,7 +63,7 @@ function UserHistory() {
                                         <span
                                             className={`badge px-3 py-2 ${order.status === "Completed"
                                                 ? "bg-success-subtle text-success border border-success"
-                                                : order.status === "Cancelled by User"||order.status==="Cancelled by Admin"
+                                                : order.status === "Cancelled by User" || order.status === "Cancelled by Admin"
                                                     ? "bg-warning-subtle text-danger border border-warning"
                                                     : "bg-primary-subtle text-primary border border-primary"
                                                 }`}

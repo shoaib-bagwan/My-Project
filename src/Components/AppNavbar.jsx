@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo1 from "../assets/logo1.png";
 import { useApi } from "./ApiContext";
 
 function AppNavbar() {
@@ -71,12 +70,12 @@ function AppNavbar() {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top" style={navbarStyle} >
+    <nav className="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top border-bottom border-white" style={navbarStyle} >
 
       <div className="container-fluid">
         {/* Logo */}
         <Link to="" className="navbar-brand d-flex align-items-center ms-3 ">
-          <img src={logo1} width="70" height="50" alt="Logo" className="me-2" />
+          <img src="/logo.png" width="70" height="50" alt="Logo" className="me-2" />
           <span className="fw-bold fs-4">Auto Dealer</span>
         </Link>
 

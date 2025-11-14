@@ -1,31 +1,18 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { motion } from "framer-motion";
-import c1 from "../assets/car1.jpg";
-import c2 from "../assets/car2.jpg";
-import c3 from "../assets/car3.jpg";
 
 function Carasol() {
   return (
-    <motion.div
-      className="container-fluid mt-2"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-    >
+    <div className="container-fluid mt-2">
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide"
-        data-bs-ride="carousel"
-        data-bs-interval="2000"
       >
         <div className="carousel-inner rounded-4 shadow-lg overflow-hidden">
           {/* Slide 1 */}
           <div className="carousel-item active">
             <img
-              src={c3}
+              src="/car3.jpg"
               className="d-block w-100 img-fluid"
-              alt="Car 1"
+              alt="Car 3"
               style={{ objectFit: "cover", maxHeight: "70vh" }}
             />
           </div>
@@ -33,7 +20,7 @@ function Carasol() {
           {/* Slide 2 */}
           <div className="carousel-item">
             <img
-              src={c2}
+              src="/car2.jpg"
               className="d-block w-100 img-fluid"
               alt="Car 2"
               style={{ objectFit: "cover", maxHeight: "70vh" }}
@@ -43,9 +30,9 @@ function Carasol() {
           {/* Slide 3 */}
           <div className="carousel-item">
             <img
-              src={c1}
+              src="/car1.jpg"
               className="d-block w-100 img-fluid"
-              alt="Car 3"
+              alt="Car 1"
               style={{ objectFit: "cover", maxHeight: "70vh" }}
             />
           </div>
@@ -96,7 +83,7 @@ function Carasol() {
           ></button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
