@@ -107,7 +107,7 @@ function AppNavbar() {
             </li>
             <li className="nav-item mx-2">
               <Link to="/old-cars" className="nav-link text-primary fw-bold">
-                Used Car's
+                Old Car's
               </Link>
             </li>
             <li className="nav-item mx-2">
